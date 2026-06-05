@@ -1,0 +1,909 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="KD658 barcode reader and work file documentation for MWM HMI">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/mwm_info/turkish.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="english.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🇹🇷 Türkçe - MWM HMI Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mwm-hmi-arayuzu-kd658-barkod-okuyucu-ve-is-dosyas" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="index.html" title="MWM HMI Manual" class="md-header__button md-logo" aria-label="MWM HMI Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MWM HMI Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🇹🇷 Türkçe
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa / Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="turkish.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🇹🇷 Türkçe
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="english.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🇬🇧 English
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="MWM HMI Manual" class="md-nav__button md-logo" aria-label="MWM HMI Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MWM HMI Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="turkish.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇹🇷 Türkçe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#is-dosyas-ile-calsrken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyası ile çalışırken
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="İş dosyası ile çalışırken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-dosyas-satr-format-kd6xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyası satır formatı (KD6xx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-dosyasz-modda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyasız modda
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="İş dosyasız modda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#genel-ayarlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genel ayarlar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alan-ayrstrma-ayarlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alan ayrıştırma ayarları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ozet-tablo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Özet tablo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="english.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🇬🇧 English
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#is-dosyas-ile-calsrken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyası ile çalışırken
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="İş dosyası ile çalışırken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-dosyas-satr-format-kd6xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyası satır formatı (KD6xx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-dosyasz-modda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        İş dosyasız modda
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="İş dosyasız modda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#genel-ayarlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genel ayarlar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alan-ayrstrma-ayarlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alan ayrıştırma ayarları
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ozet-tablo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Özet tablo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mwm-hmi-arayuzu-kd658-barkod-okuyucu-ve-is-dosyas">MWM HMI Arayüzü — KD658 Barkod Okuyucu ve İş Dosyası</h1>
+<p>KD658 barkod okuyucu, MWM HMI üzerinde iki farklı çalışma modunda kullanılır: <strong>iş dosyası ile</strong> ve <strong>iş dosyasız</strong>.</p>
+<h2 id="is-dosyas-ile-calsrken">İş dosyası ile çalışırken</h2>
+<p>İş dosyası (batch dosyası) yüklüyken barkod tarandığında, barkod içeriğinde <strong>N karakterinin ardından gelen 3 hane</strong> yeterlidir. HMI, bu numarayı iş dosyasındaki satırla eşleştirir ve satırdaki tüm üretim verisini kullanır.</p>
+<p><img alt="İş dosyası örneği" src="images/batch-work-file.png" /></p>
+<p>Örnek iş dosyası satırları (<code>batch_test_1.txt</code>):</p>
+<pre><code>N000KStandard  P00001F001X06780Y07490Z00000C1717171700S001
+N001KStandard  P00001F002X06780Y07490Z00000C1717171700S001
+N002KStandard  P00001F003X06780Y07490Z00000C1717171700S001
+</code></pre>
+<p>Bu örnekte <code>N000</code>, <code>N001</code>, <code>N002</code> gibi liste numaraları barkod tarandığında eşleşme anahtarı olarak kullanılır. Operatör yalnızca <code>000</code>, <code>001</code> veya <code>002</code> gibi N sonrası 3 haneyi tarayarak ilgili satırdaki üretim verisine ulaşır.</p>
+<h3 id="is-dosyas-satr-format-kd6xx">İş dosyası satır formatı (KD6xx)</h3>
+<p>Her satır, sabit başlık karakterleriyle ayrılmış alanlardan oluşur. Alan tanımları <code>KD6xx_BathcFile_Desc.xlsx</code> dosyasına göredir:</p>
+<table>
+<thead>
+<tr>
+<th>Karakter</th>
+<th>Başlık</th>
+<th>Boyut</th>
+<th>Tip</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>Liste numarası</td>
+<td>N + 3 karakter</td>
+<td>Sayısal</td>
+<td>Barkod eşleşmesinde kullanılan sıra numarası</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Profil kodu</td>
+<td>K + 10 karakter</td>
+<td>Metin</td>
+<td>Profil tanımı (ör. <code>Standard</code>, <code>Profiles01</code>)</td>
+</tr>
+<tr>
+<td>P</td>
+<td>BIN / Trolley numarası</td>
+<td>P + 5 karakter</td>
+<td>Sayısal</td>
+<td>Palet veya trolley numarası</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Pencere numarası</td>
+<td>F + 3 karakter</td>
+<td>Sayısal</td>
+<td>Pencere sıra numarası</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Çerçeve X değeri</td>
+<td>X + 5 karakter</td>
+<td>Sayısal</td>
+<td>Beşinci karakter ondalık basamağıdır. Örn. <code>15005</code> = 1500,5</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Çerçeve Y değeri</td>
+<td>Y + 5 karakter</td>
+<td>Sayısal</td>
+<td>Beşinci karakter ondalık basamağıdır. Örn. <code>15005</code> = 1500,5</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Kullanılmıyor</td>
+<td>Z + 5 karakter</td>
+<td>Metin</td>
+<td>Rezerve alan</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Operatör bilgisi</td>
+<td>C + 10 karakter</td>
+<td>Metin</td>
+<td>Operatör için ek bilgi</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Adet</td>
+<td>S + 3 karakter</td>
+<td>Sayısal</td>
+<td>Üretim adedi</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Örnek satır (xlsx):</strong></p>
+<pre><code>N000KProfiles01P00001F001X06780Y07490Z00000C1717171700S001
+</code></pre>
+<p><strong>İş dosyası örneği -----&gt;&gt;&gt;</strong> <a href="batch_test_1.txt">batch_test_1.txt</a></p>
+<h2 id="is-dosyasz-modda">İş dosyasız modda</h2>
+<p>İş dosyası yüklü değilken barkod verisi doğrudan taranan string üzerinden ayrıştırılır. Gerekli alanlar MWM HMI <strong>Load Barcode</strong> ekranından tanımlanır.</p>
+<p><img alt="KD658 Load Barcode ekranı" src="images/kd658-load-barcode.png" /></p>
+<h3 id="genel-ayarlar">Genel ayarlar</h3>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>Değer</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barcode ID</td>
+<td>1</td>
+<td>Barkod tanım kimliği. Birden fazla barkod formatı tanımlanacaksa her biri farklı bir ID ile kaydedilir.</td>
+</tr>
+<tr>
+<td>Barcode Length</td>
+<td>31</td>
+<td>Taranan barkodun toplam karakter uzunluğu. Ayrıştırma bu uzunluğa göre yapılır.</td>
+</tr>
+<tr>
+<td>Barcode</td>
+<td>—</td>
+<td>Test amaçlı barkod giriş alanı. Tanımlanan index ve uzunlukların doğruluğunu kontrol etmek için örnek barkod buraya yazılabilir.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="alan-ayrstrma-ayarlar">Alan ayrıştırma ayarları</h3>
+<p>Index değerleri <strong>0 tabanlıdır</strong> (barkodun ilk karakteri index 0). <strong>First</strong> alanı ilgili verinin barkod içindeki başlangıç indexini, <strong>Last / End</strong> alanı ise First değerinden itibaren okunacak karakter (digit) sayısını belirtir.</p>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>Değer</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stan First</td>
+<td>0</td>
+<td>Standart karakterin barkod başlangıç indexi.</td>
+</tr>
+<tr>
+<td>Stan Last</td>
+<td>1</td>
+<td>Stan First değerinden itibaren okunacak karakter sayısı.</td>
+</tr>
+<tr>
+<td>Prof First</td>
+<td>5</td>
+<td>Profil kodunun barkod başlangıç indexi.</td>
+</tr>
+<tr>
+<td>Prof Last</td>
+<td>12</td>
+<td>Prof First değerinden itibaren okunacak karakter sayısı.</td>
+</tr>
+<tr>
+<td>Color First</td>
+<td>17</td>
+<td>Profil renk kodunun barkod başlangıç indexi.</td>
+</tr>
+<tr>
+<td>Color Last</td>
+<td>2</td>
+<td>Color First değerinden itibaren okunacak karakter sayısı.</td>
+</tr>
+<tr>
+<td>X First</td>
+<td>20</td>
+<td>Çerçeve X ekseni uzunluğunun barkod başlangıç indexi.</td>
+</tr>
+<tr>
+<td>X Last</td>
+<td>6</td>
+<td>X First değerinden itibaren okunacak karakter sayısı.</td>
+</tr>
+<tr>
+<td>Y First</td>
+<td>26</td>
+<td>Çerçeve Y ekseni uzunluğunun barkod başlangıç indexi.</td>
+</tr>
+<tr>
+<td>Y Last</td>
+<td>5</td>
+<td>Y First değerinden itibaren okunacak karakter sayısı.</td>
+</tr>
+<tr>
+<td>Special first</td>
+<td>—</td>
+<td>İsteğe bağlı özel alan için barkod başlangıç indexi. Standart alanlara ek veri okunması gerektiğinde tanımlanır.</td>
+</tr>
+<tr>
+<td>Special end</td>
+<td>—</td>
+<td>Special first değerinden itibaren okunacak karakter sayısı. Special first ile birlikte kullanılır.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ozet-tablo">Özet tablo</h3>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>First</th>
+<th>Last / End</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stan</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Prof</td>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>17</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>20</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>26</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>İş dosyasız modda taranan 31 karakterlik barkod, yukarıdaki index ve uzunluk değerlerine göre Stan, Prof, Color, X ve Y alanlarına ayrıştırılır. Special first / Special end tanımlanırsa ek bir özel alan da aynı mantıkla okunur.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
