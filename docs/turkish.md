@@ -6,6 +6,8 @@ KD658 barkod okuyucu, MWM HMI üzerinde iki farklı çalışma modunda kullanıl
 
 İş dosyası (batch dosyası) yüklüyken barkod tarandığında, barkod içeriğinde **N karakterinin ardından gelen 3 hane** yeterlidir. HMI, bu numarayı iş dosyasındaki satırla eşleştirir ve satırdaki tüm üretim verisini kullanır.
 
+![İş dosyası örneği](./images/batch-work-file.png)
+
 Örnek iş dosyası satırları (`batch_test_1.txt`):
 
 ```
@@ -14,7 +16,7 @@ N001KStandard  P00001F002X06780Y07490Z00000C1717171700S001
 N002KStandard  P00001F003X06780Y07490Z00000C1717171700S001
 ```
 
-Bu örnekte `N000`, `N001`, `N002` gibi liste numaraları barkod tarandığında eşleşme anahtarı olarak kullanılır.
+Bu örnekte `N000`, `N001`, `N002` gibi liste numaraları barkod tarandığında eşleşme anahtarı olarak kullanılır. Operatör yalnızca `000`, `001` veya `002` gibi N sonrası 3 haneyi tarayarak ilgili satırdaki üretim verisine ulaşır.
 
 ### İş dosyası satır formatı (KD6xx)
 
@@ -46,20 +48,41 @@ N000KProfiles01P00001F001X06780Y07490Z00000C1717171700S001
 
 ![KD658 Load Barcode ekranı](./images/kd658-load-barcode.png)
 
-### Load Barcode ayarları
+### Genel ayarlar
 
-| Alan | First (Başlangıç) | Last / End (Uzunluk) | Açıklama |
-|------|-------------------|----------------------|----------|
-| Barcode ID | 1 | — | Barkod tanım kimliği |
-| Barcode Length | 31 | — | Barkod toplam karakter uzunluğu |
-| Stan | 0 | 1 | İstasyon bilgisi |
-| Prof | 5 | 12 | Profil kodu |
-| Color | 17 | 2 | Renk kodu |
-| X | 20 | 6 | X koordinatı |
-| Y | 26 | 5 | Y koordinatı |
-| Special first | — | — | Özel alan başlangıcı (isteğe bağlı) |
-| Special end | — | — | Özel alan uzunluğu (isteğe bağlı) |
+| Alan | Değer | Açıklama |
+|------|-------|----------|
+| Barcode ID | 1 | Barkod tanım kimliği. Birden fazla barkod formatı tanımlanacaksa her biri farklı bir ID ile kaydedilir. |
+| Barcode Length | 31 | Taranan barkodun toplam karakter uzunluğu. Ayrıştırma bu uzunluğa göre yapılır. |
+| Barcode | — | Test amaçlı barkod giriş alanı. Tanımlanan index ve uzunlukların doğruluğunu kontrol etmek için örnek barkod buraya yazılabilir. |
 
-**First** değeri alanın barkod içindeki başlangıç konumunu, **Last / End** değeri ise alanın karakter uzunluğunu belirtir.
+### Alan ayrıştırma ayarları
 
-İş dosyasız modda taranan 31 karakterlik barkod, yukarıdaki konum ve uzunluklara göre Stan, Prof, Color, X ve Y alanlarına ayrıştırılır.
+Index değerleri **0 tabanlıdır** (barkodun ilk karakteri index 0). **First** alanı ilgili verinin barkod içindeki başlangıç indexini, **Last / End** alanı ise First değerinden itibaren okunacak karakter (digit) sayısını belirtir.
+
+| Alan | Değer | Açıklama |
+|------|-------|----------|
+| Stan First | 0 | Standart karakterin barkod başlangıç indexi. |
+| Stan Last | 1 | Stan First değerinden itibaren okunacak karakter sayısı. |
+| Prof First | 5 | Profil kodunun barkod başlangıç indexi. |
+| Prof Last | 12 | Prof First değerinden itibaren okunacak karakter sayısı. |
+| Color First | 17 | Profil renk kodunun barkod başlangıç indexi. |
+| Color Last | 2 | Color First değerinden itibaren okunacak karakter sayısı. |
+| X First | 20 | Çerçeve X ekseni uzunluğunun barkod başlangıç indexi. |
+| X Last | 6 | X First değerinden itibaren okunacak karakter sayısı. |
+| Y First | 26 | Çerçeve Y ekseni uzunluğunun barkod başlangıç indexi. |
+| Y Last | 5 | Y First değerinden itibaren okunacak karakter sayısı. |
+| Special first | — | İsteğe bağlı özel alan için barkod başlangıç indexi. Standart alanlara ek veri okunması gerektiğinde tanımlanır. |
+| Special end | — | Special first değerinden itibaren okunacak karakter sayısı. Special first ile birlikte kullanılır. |
+
+### Özet tablo
+
+| Alan | First | Last / End |
+|------|-------|------------|
+| Stan | 0 | 1 |
+| Prof | 5 | 12 |
+| Color | 17 | 2 |
+| X | 20 | 6 |
+| Y | 26 | 5 |
+
+İş dosyasız modda taranan 31 karakterlik barkod, yukarıdaki index ve uzunluk değerlerine göre Stan, Prof, Color, X ve Y alanlarına ayrıştırılır. Special first / Special end tanımlanırsa ek bir özel alan da aynı mantıkla okunur.
