@@ -7,7 +7,7 @@ pdf: mwm-barcode-tr.pdf
 # MWM Kaynak Makineleri — Barkod Bilgi Sayfası
 
 <div class="document-tools" markdown="1">
-[English](barcode-en.md) · **[PDF indir](downloads/mwm-barcode-tr.pdf)**
+**[PDF indir](downloads/mwm-barcode-tr.pdf)**
 </div>
 
 TT kesim makinesinden veya MSC_V2X arayüzlü bir kesim merkezinden gelen etiket, kaynak makinesine **profil seçimi ve çerçeve ölçülerini** taşıyabilir. MWM_V3, barkodu makinede kayıtlı alan tanımına göre okur; profilin kaynak parametrelerini makinenin kendi reçetesinden yükler.

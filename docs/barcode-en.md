@@ -7,7 +7,7 @@ pdf: mwm-barcode-en.pdf
 # MWM Welding Machines — Barcode Information
 
 <div class="document-tools" markdown="1">
-[Türkçe](barcode-tr.md) · **[Download PDF](downloads/mwm-barcode-en.pdf)**
+**[Download PDF](downloads/mwm-barcode-en.pdf)**
 </div>
 
 A label from a TT cutting machine or a cutting centre with the MSC_V2X interface can carry **profile selection and frame dimensions** to the welding machine. MWM_V3 reads the barcode using the field definition saved on the machine and loads the welding parameters from the machine's profile recipe.

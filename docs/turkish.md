@@ -1,4 +1,14 @@
-# MWM HMI Arayüzü — KD658 Barkod Okuyucu ve İş Dosyası
+---
+title: KD658 — İş Dosyası Kullanımı
+lang: tr
+pdf: mwm-kd658-tr.pdf
+---
+
+# KD658 — İş Dosyası Kullanımı
+
+<div class="document-tools" markdown="1">
+**[PDF indir](downloads/mwm-kd658-tr.pdf)**
+</div>
 
 TT / MSC etiketinden doğrudan veri okuma için [MWM barkod bilgi sayfasına](barcode-tr.md) bakın. Aşağıdaki ölçü konumları 31 karakterlik TT örneği ve ölçü çarpanı 1 içindir; ekran görseli farklı bir kurulum örneğidir.
 

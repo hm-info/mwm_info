@@ -1,4 +1,4 @@
-site_name: MWM HMI Manual
+site_name: MWM Kullanım Rehberi
 site_description: MWM kaynak makineleri için TT / MSC barkod okuma, profil reçetesi ve iş dosyası rehberi
 site_url: https://hm-info.github.io/mwm_info/
 
@@ -6,9 +6,12 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: overrides
   language: tr
+  icon:
+    logo: material/book-open-page-variant
   features:
-    - navigation.tabs
+    - navigation.expand
     - navigation.top
     - search.highlight
   palette:
@@ -17,11 +20,12 @@ theme:
       accent: blue-grey
 
 nav:
-  - Ana Sayfa / Home: index.md
   - Türkçe:
+      - Başlangıç: index.md
       - Barkod Bilgi Sayfası: barcode-tr.md
       - KD658 İş Dosyası: turkish.md
   - English:
+      - Getting Started: home-en.md
       - Barcode Information: barcode-en.md
       - KD658 Work File: english.md
 
@@ -35,3 +39,16 @@ markdown_extensions:
 
 hooks:
   - hooks/pdf_export.py
+  - hooks/navigation.py
+
+extra:
+  alternate:
+    - name: Türkçe
+      link: index.html
+      lang: tr
+    - name: English
+      link: home-en.html
+      lang: en
+
+extra_css:
+  - stylesheets/guide.css

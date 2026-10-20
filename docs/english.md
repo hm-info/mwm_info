@@ -1,4 +1,14 @@
-# MWM HMI Interface — KD658 Barcode Reader and Work File
+---
+title: KD658 — Using Job Files
+lang: en
+pdf: mwm-kd658-en.pdf
+---
+
+# KD658 — Using Job Files
+
+<div class="document-tools" markdown="1">
+**[Download PDF](downloads/mwm-kd658-en.pdf)**
+</div>
 
 See the [MWM barcode information page](barcode-en.md) for TT / MSC input, recipe selection and operating methods. The indices below apply to the 31-character TT example with dimension factor 1; the screenshot shows a different installation example.
 

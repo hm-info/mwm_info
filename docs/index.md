@@ -1,21 +1,27 @@
-# MWM HMI Manual
+---
+title: Başlangıç
+lang: tr
+hide:
+  - toc
+---
 
-MWM arayüzü kullanan kaynak makinelerinde barkod okuma ve iş dosyası kullanımı.
+# MWM Kullanım Rehberi
 
-## [TT / MSC → MWM: Barkod Bilgi Sayfası](barcode-tr.md)
+<p class="guide-intro">Kaynak makinenizde barkod okuma ve iş dosyası kullanımı için ihtiyacınız olan rehberi seçin.</p>
 
-Etiket üzerindeki bilgilerin anlamı, 31 karakterlik barkodun alanları, profil / conta / renk seçimi, ölçüler ve iş listesiyle çalışma.
+<div class="guide-grid">
+  <a class="guide-card" href="barcode-tr.html">
+    <span class="guide-card__label">TT / MSC → MWM</span>
+    <h2>Barkod rehberi</h2>
+    <p>Etiketteki alanlar, profil ve renk seçimi, çerçeve ölçüleri ve barkod okuma ayarları.</p>
+    <span class="guide-card__action">Rehberi aç</span>
+  </a>
+  <a class="guide-card" href="turkish.html">
+    <span class="guide-card__label">İş dosyaları · KD658</span>
+    <h2>İş dosyası kullanımı</h2>
+    <p>Kesim listesi satırları, dosya alanları ve barkodla iş listesinden parça seçimi.</p>
+    <span class="guide-card__action">Rehberi aç</span>
+  </a>
+</div>
 
-[Türkçe oku](barcode-tr.md) · **[Türkçe PDF indir](downloads/mwm-barcode-tr.pdf)**
-
-## [TT / MSC → MWM: Barcode Information](barcode-en.md)
-
-Label information, the 31-character barcode fields, profile / gasket / colour selection, dimensions and job-list operation.
-
-[Read in English](barcode-en.md) · **[Download English PDF](downloads/mwm-barcode-en.pdf)**
-
-## KD658 iş dosyası rehberi
-
-## [English](english.md)
-
-## [Türkçe](turkish.md)
+<p class="guide-note">Her rehberin başındaki PDF indir düğmesiyle bir kopyasını cihazınıza kaydedebilirsiniz.</p>
