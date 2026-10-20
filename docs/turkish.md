@@ -1,10 +1,12 @@
 # MWM HMI Arayüzü — KD658 Barkod Okuyucu ve İş Dosyası
 
+TT / MSC etiketinden doğrudan veri okuma için yeni [MWM barkod bilgi sayfasına](barcode-tr.md) bakın. Aşağıdaki ölçü konumları 31 karakterlik TT örneği ve `XYFactor = 1` için düzeltilmiştir; ekran görseli eski kurulum örneğidir.
+
 KD658 barkod okuyucu, MWM HMI üzerinde iki farklı çalışma modunda kullanılır: **iş dosyası ile** ve **iş dosyasız**.
 
 ## İş dosyası ile çalışırken
 
-İş dosyası (batch dosyası) yüklüyken barkod tarandığında, barkod içeriğinde **N karakterinin ardından gelen 3 hane** yeterlidir. HMI, bu numarayı iş dosyasındaki satırla eşleştirir ve satırdaki tüm üretim verisini kullanır.
+Otomatik ekranda **doğrudan liste numarası modu (`BatchFileMode = 1`)** seçiliyken okuyucunun gönderdiği `000`, `001` gibi tam metin iş dosyasındaki `ListNo` ile eşleştirilir. İş dosyasındaki N başlığı taranan metinden otomatik ayıklanmaz. Diğer modlardaki eşleştirme için [barkod bilgi sayfasına](barcode-tr.md#is-listesiyle-calsma-otomatik-ekran) bakın.
 
 ![İş dosyası örneği](./images/batch-work-file.png)
 
@@ -44,7 +46,7 @@ N000KProfiles01P00001F001X06780Y07490Z00000C1717171700S001
 
 ## İş dosyasız modda
 
-İş dosyası yüklü değilken barkod verisi doğrudan taranan string üzerinden ayrıştırılır. Gerekli alanlar MWM HMI **Load Barcode** ekranından tanımlanır.
+Manuel ekranda barkod verisi doğrudan taranan metin üzerinden ayrıştırılır. Gerekli alanlar MWM HMI **Load Barcode** ekranından tanımlanır. Davranış yalnızca dosyanın yüklü olup olmamasına bağlı değildir; aktif ekran ve çalışma modu da belirleyicidir.
 
 ![KD658 Load Barcode ekranı](./images/kd658-load-barcode.png)
 
@@ -68,10 +70,10 @@ Index değerleri **0 tabanlıdır** (barkodun ilk karakteri index 0). **First** 
 | Prof Last | 12 | Prof First değerinden itibaren okunacak karakter sayısı. |
 | Color First | 17 | Profil renk kodunun barkod başlangıç indexi. |
 | Color Last | 2 | Color First değerinden itibaren okunacak karakter sayısı. |
-| X First | 20 | Çerçeve X ekseni uzunluğunun barkod başlangıç indexi. |
+| X First | 19 | Çerçeve X ekseni uzunluğunun barkod başlangıç indexi. |
 | X Last | 6 | X First değerinden itibaren okunacak karakter sayısı. |
-| Y First | 26 | Çerçeve Y ekseni uzunluğunun barkod başlangıç indexi. |
-| Y Last | 5 | Y First değerinden itibaren okunacak karakter sayısı. |
+| Y First | 25 | Çerçeve Y ekseni uzunluğunun barkod başlangıç indexi. |
+| Y Last | 6 | Y First değerinden itibaren okunacak karakter sayısı. |
 | Special first | — | İsteğe bağlı özel alan için barkod başlangıç indexi. Standart alanlara ek veri okunması gerektiğinde tanımlanır. |
 | Special end | — | Special first değerinden itibaren okunacak karakter sayısı. Special first ile birlikte kullanılır. |
 
@@ -82,7 +84,9 @@ Index değerleri **0 tabanlıdır** (barkodun ilk karakteri index 0). **First** 
 | Stan | 0 | 1 |
 | Prof | 5 | 12 |
 | Color | 17 | 2 |
-| X | 20 | 6 |
-| Y | 26 | 5 |
+| X | 19 | 6 |
+| Y | 25 | 6 |
+
+Bu tanımda TT ölçüsünden sonraki sabit sıfır da okunur: `289400 / 100 = 2894,00 mm`. Color alanı conta ve renk hanesini birlikte taşır. [Ölçekleme ve reçete eşleşmesi](barcode-tr.md) açıklamasına bakın.
 
 İş dosyasız modda taranan 31 karakterlik barkod, yukarıdaki index ve uzunluk değerlerine göre Stan, Prof, Color, X ve Y alanlarına ayrıştırılır. Special first / Special end tanımlanırsa ek bir özel alan da aynı mantıkla okunur.

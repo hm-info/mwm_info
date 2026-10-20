@@ -1,10 +1,12 @@
 # MWM HMI Interface — KD658 Barcode Reader and Work File
 
+See the [MWM barcode information page (Turkish)](barcode-tr.md) for TT / MSC input, recipe lookup and operating modes. The indices below have been corrected for the 31-character TT example with `XYFactor = 1`; the screenshot shows an older installation example.
+
 The KD658 barcode reader is used on the MWM HMI in two operating modes: **with a work file** and **without a work file**.
 
 ## Working with a work file
 
-When a work file (batch file) is loaded, scanning a barcode requires only the **3 digits following the N character** in the barcode content. The HMI matches this number to the corresponding line in the work file and uses all production data from that line.
+On the automatic screen in **direct list ID mode (`BatchFileMode = 1`)**, the entire scanned text (for example `001`) is matched against the loaded work file's `ListNo`. The N header in a work file is not automatically removed from a scan. Other modes may extract the matching key using the configured Prof field.
 
 ![Work file example](./images/batch-work-file.png)
 
@@ -44,7 +46,7 @@ N000KProfiles01P00001F001X06780Y07490Z00000C1717171700S001
 
 ## Working without a work file
 
-When no work file is loaded, barcode data is parsed directly from the scanned string. The required fields are configured on the MWM HMI **Load Barcode** screen.
+On the manual screen, barcode data is parsed directly from the scanned string. The required fields are configured on the MWM HMI **Load Barcode** screen. The active screen and operating mode determine the behavior, rather than file presence alone.
 
 ![KD658 Load Barcode screen](./images/kd658-load-barcode.png)
 
@@ -68,10 +70,10 @@ Index values are **0-based** (the first character of the barcode is index 0). Th
 | Prof Last | 12 | Number of characters to read starting from Prof First. |
 | Color First | 17 | Starting index of the profile color code in the barcode. |
 | Color Last | 2 | Number of characters to read starting from Color First. |
-| X First | 20 | Starting index of the frame X-axis length in the barcode. |
+| X First | 19 | Starting index of the frame X-axis length in the barcode. |
 | X Last | 6 | Number of characters to read starting from X First. |
-| Y First | 26 | Starting index of the frame Y-axis length in the barcode. |
-| Y Last | 5 | Number of characters to read starting from Y First. |
+| Y First | 25 | Starting index of the frame Y-axis length in the barcode. |
+| Y Last | 6 | Number of characters to read starting from Y First. |
 | Special first | — | Optional starting index for a custom field. Defined when additional data beyond the standard fields needs to be read. |
 | Special end | — | Number of characters to read starting from Special first. Used together with Special first. |
 
@@ -82,7 +84,9 @@ Index values are **0-based** (the first character of the barcode is index 0). Th
 | Stan | 0 | 1 |
 | Prof | 5 | 12 |
 | Color | 17 | 2 |
-| X | 20 | 6 |
-| Y | 26 | 5 |
+| X | 19 | 6 |
+| Y | 25 | 6 |
+
+This includes the fixed zero after each TT dimension: `289400 / 100 = 2894.00 mm` with `XYFactor = 1`. Color contains both gasket and color digits. In MWM_V3, direct parsing belongs to the manual screen; automatic mode matches `ListNo` using either the configured Prof slice or the entire scan, depending on `BatchFileMode`. Mode 1 expects the list number itself (for example `001`); it does not remove an N prefix automatically.
 
 In work-file-less mode, the scanned 31-character barcode is parsed into Stan, Prof, Color, X, and Y fields according to the indices and lengths above. If Special first / Special end are defined, an additional custom field is read using the same logic.
