@@ -1,0 +1,918 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Barcode reading and job files for MWM welding machines.">
+      
+      
+      
+        <link rel="canonical" href="https://hm-info.github.io/mwm_info/english.html">
+      
+      
+        <link rel="prev" href="barcode-en.html">
+      
+      
+      
+        
+          <link rel="alternate" href="turkish.html" hreflang="tr">
+        
+          <link rel="alternate" href="english.html" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>KD658 — Using Job Files - MWM User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/guide.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kd658-using-job-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="home-en.html" title="MWM User Guide" class="md-header__button md-logo" aria-label="MWM User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MWM User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              KD658 — Using Job Files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <nav class="guide-language" aria-label="Language">
+  
+    <a href="turkish.html" lang="tr" hreflang="tr">Türkçe</a>
+  
+    <a href="english.html" lang="en" hreflang="en" aria-current="page">English</a>
+  
+</nav>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="home-en.html" title="MWM User Guide" class="md-nav__button md-logo" aria-label="MWM User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    MWM User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="home-en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="barcode-en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barcode guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Job files
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Job files
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KD658
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="english.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KD658
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-a-work-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with a work file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with a work file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#work-file-line-format-kd6xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work file line format (KD6xx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-without-a-work-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working without a work file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working without a work file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-parsing-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field parsing settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-a-work-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with a work file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with a work file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#work-file-line-format-kd6xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work file line format (KD6xx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-without-a-work-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working without a work file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working without a work file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-parsing-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field parsing settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kd658-using-job-files">KD658 — Using Job Files</h1>
+<div class="document-tools">
+<p><strong><a href="downloads/mwm-kd658-en.pdf">Download PDF</a></strong></p>
+</div>
+<p>See the <a href="barcode-en.html">MWM barcode information page</a> for TT / MSC input, recipe selection and operating methods. The indices below apply to the 31-character TT example with dimension factor 1; the screenshot shows a different installation example.</p>
+<p>The KD658 barcode reader is used on the MWM HMI in two operating modes: <strong>with a work file</strong> and <strong>without a work file</strong>.</p>
+<h2 id="working-with-a-work-file">Working with a work file</h2>
+<p>On the automatic screen, <strong>direct list-number selection</strong> matches the entire scanned text (for example <code>001</code>) to the loaded work file's list number. The N header in a work file is not automatically removed from a scan. Other operating methods may use a configured section of the barcode.</p>
+<p><img alt="Work file example" src="images/batch-work-file.png" /></p>
+<p>Example work file lines (<code>batch_test_1.txt</code>):</p>
+<pre><code>N000KStandard  P00001F001X06780Y07490Z00000C1717171700S001
+N001KStandard  P00001F002X06780Y07490Z00000C1717171700S001
+N002KStandard  P00001F003X06780Y07490Z00000C1717171700S001
+</code></pre>
+<p>In this example, list numbers such as <code>N000</code>, <code>N001</code>, and <code>N002</code> are used as the matching key when a barcode is scanned. The operator only needs to scan the 3 digits after N (e.g. <code>000</code>, <code>001</code>, or <code>002</code>) to reach the production data on the corresponding line.</p>
+<h3 id="work-file-line-format-kd6xx">Work file line format (KD6xx)</h3>
+<p>Each line consists of fields separated by fixed header characters. Field definitions are based on <code>KD6xx_BathcFile_Desc.xlsx</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Header</th>
+<th>Size</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>List number</td>
+<td>N + 3 characters</td>
+<td>Numeric</td>
+<td>Sequence number used for barcode matching</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Profile code</td>
+<td>K + 10 characters</td>
+<td>Text</td>
+<td>Profile definition (e.g. <code>Standard</code>, <code>Profiles01</code>)</td>
+</tr>
+<tr>
+<td>P</td>
+<td>BIN / Trolley number</td>
+<td>P + 5 characters</td>
+<td>Numeric</td>
+<td>Pallet or trolley number</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Window number</td>
+<td>F + 3 characters</td>
+<td>Numeric</td>
+<td>Window sequence number</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Frame X value</td>
+<td>X + 5 characters</td>
+<td>Numeric</td>
+<td>The fifth character is the decimal place. E.g. <code>15005</code> = 1500.5</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Frame Y value</td>
+<td>Y + 5 characters</td>
+<td>Numeric</td>
+<td>The fifth character is the decimal place. E.g. <code>15005</code> = 1500.5</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Unused</td>
+<td>Z + 5 characters</td>
+<td>Text</td>
+<td>Reserved field</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Operator information</td>
+<td>C + 10 characters</td>
+<td>Text</td>
+<td>Additional information for the operator</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Quantity</td>
+<td>S + 3 characters</td>
+<td>Numeric</td>
+<td>Production quantity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example line (xlsx):</strong></p>
+<pre><code>N000KProfiles01P00001F001X06780Y07490Z00000C1717171700S001
+</code></pre>
+<p><strong>Work file example -----&gt;&gt;&gt;</strong> <a href="batch_test_1.txt">batch_test_1.txt</a></p>
+<h2 id="working-without-a-work-file">Working without a work file</h2>
+<p>On the manual screen, barcode data is parsed directly from the scanned string. The required fields are configured on the MWM HMI <strong>Load Barcode</strong> screen. The active screen and operating mode determine the behavior, rather than file presence alone.</p>
+<p><img alt="KD658 Load Barcode screen" src="images/kd658-load-barcode.png" /></p>
+<h3 id="general-settings">General settings</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barcode ID</td>
+<td>1</td>
+<td>Barcode definition identifier. When multiple barcode formats are defined, each is saved with a different ID.</td>
+</tr>
+<tr>
+<td>Barcode Length</td>
+<td>31</td>
+<td>Total character length of the scanned barcode. Parsing is performed according to this length.</td>
+</tr>
+<tr>
+<td>Barcode</td>
+<td>—</td>
+<td>Test input field for barcodes. A sample barcode can be entered here to verify the configured indices and lengths.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="field-parsing-settings">Field parsing settings</h3>
+<p>Index values are <strong>0-based</strong> (the first character of the barcode is index 0). The <strong>First</strong> field specifies the starting index of the data within the barcode; the <strong>Last / End</strong> field specifies the number of characters (digits) to read starting from the First value.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stan First</td>
+<td>0</td>
+<td>Starting index of the standard character in the barcode.</td>
+</tr>
+<tr>
+<td>Stan Last</td>
+<td>1</td>
+<td>Number of characters to read starting from Stan First.</td>
+</tr>
+<tr>
+<td>Prof First</td>
+<td>5</td>
+<td>Starting index of the profile code in the barcode.</td>
+</tr>
+<tr>
+<td>Prof Last</td>
+<td>12</td>
+<td>Number of characters to read starting from Prof First.</td>
+</tr>
+<tr>
+<td>Color First</td>
+<td>17</td>
+<td>Starting index of the profile color code in the barcode.</td>
+</tr>
+<tr>
+<td>Color Last</td>
+<td>2</td>
+<td>Number of characters to read starting from Color First.</td>
+</tr>
+<tr>
+<td>X First</td>
+<td>19</td>
+<td>Starting index of the frame X-axis length in the barcode.</td>
+</tr>
+<tr>
+<td>X Last</td>
+<td>6</td>
+<td>Number of characters to read starting from X First.</td>
+</tr>
+<tr>
+<td>Y First</td>
+<td>25</td>
+<td>Starting index of the frame Y-axis length in the barcode.</td>
+</tr>
+<tr>
+<td>Y Last</td>
+<td>6</td>
+<td>Number of characters to read starting from Y First.</td>
+</tr>
+<tr>
+<td>Special first</td>
+<td>—</td>
+<td>Optional starting index for a custom field. Defined when additional data beyond the standard fields needs to be read.</td>
+</tr>
+<tr>
+<td>Special end</td>
+<td>—</td>
+<td>Number of characters to read starting from Special first. Used together with Special first.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summary-table">Summary table</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>First</th>
+<th>Last / End</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stan</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Prof</td>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>17</td>
+<td>2</td>
+</tr>
+<tr>
+<td>X</td>
+<td>19</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>25</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>This includes the fixed zero after each TT dimension: <code>289400 / 100 = 2894.00 mm</code> with dimension factor 1. Color contains both gasket and colour digits. Direct data input uses the manual screen; automatic operation selects a job-list row using the configured section or the entire scan. Direct list-number selection expects the list number itself (for example <code>001</code>); it does not remove an N prefix automatically.</p>
+<p>In work-file-less mode, the scanned 31-character barcode is parsed into Stan, Prof, Color, X, and Y fields according to the indices and lengths above. If Special first / Special end are defined, an additional custom field is read using the same logic.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.top", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
