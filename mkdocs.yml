@@ -18,11 +18,20 @@ theme:
 
 nav:
   - Ana Sayfa / Home: index.md
-  - Barkod Bilgi Sayfası: barcode-tr.md
-  - 🇹🇷 Türkçe: turkish.md
-  - 🇬🇧 English: english.md
+  - Türkçe:
+      - Barkod Bilgi Sayfası: barcode-tr.md
+      - KD658 İş Dosyası: turkish.md
+  - English:
+      - Barcode Information: barcode-en.md
+      - KD658 Work File: english.md
 
 use_directory_urls: false
 
 plugins:
   - search
+
+markdown_extensions:
+  - md_in_html
+
+hooks:
+  - hooks/pdf_export.py

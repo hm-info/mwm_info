@@ -1,4 +1,14 @@
+---
+title: MWM Kaynak Makineleri — Barkod Bilgi Sayfası
+lang: tr
+pdf: mwm-barcode-tr.pdf
+---
+
 # MWM Kaynak Makineleri — Barkod Bilgi Sayfası
+
+<div class="document-tools" markdown="1">
+[English](barcode-en.md) · **[PDF indir](downloads/mwm-barcode-tr.pdf)**
+</div>
 
 TT kesim makinesinden veya MSC_V2X arayüzlü bir kesim merkezinden gelen etiket, kaynak makinesine **profil seçimi ve çerçeve ölçülerini** taşıyabilir. MWM_V3, barkodu makinede kayıtlı alan tanımına göre okur; profilin kaynak parametrelerini makinenin kendi reçetesinden yükler.
 
@@ -59,12 +69,12 @@ K | 1 | 001 | PROFILE CODE | 0 | 1 | 28940 | 0 | 19940 | 0
 
 TT referansında renk için `1 = beyaz`, `2 = alt renkli`, `3 = üst renkli` açıklamaları vardır. Aynı referans çift renk için de `3` yazdığı için bu son değeri kesin bir kod olarak kabul etmeyin; üretici etiket tanımında doğrulayın.
 
-MWM_V3 bu rakamları tek başına sabit bir renk tablosu olarak yorumlamaz. **12 karakter profil + 2 karakter conta/renk** birleştirilir ve profil reçetesi aranır:
+Kaynak makinesinde **12 karakter profil + 2 karakter conta/renk** birlikte profil reçetesini seçer:
 
 ```text
 Profil       : PROFILE CODE
 Conta + renk : 01
-Reçete ProfID: PROFILE CODE01
+Profil tanımı: PROFILE CODE01
 ```
 
 Bu anahtarla eşleşen profil tanımı makinede bulunmalıdır. Conta, alt/üst renk, conta baskısı gibi gerçek üretim seçenekleri de bulunan profil reçetesinden gelir. Aynı profilin farklı conta/renk kombinasyonları için uygun reçeteleri tanımlayın.
@@ -85,26 +95,26 @@ Bu örnek için **doğrudan okuma / manuel ekran** tanımı:
 | Y | **25** | **6** | `199400` |
 | Special | 0 | 0 | Bu TT örneğinde özel veri yok; boş metin okunur. |
 
-`Barcode ID` tanım kaydının kimliğidir; etiketin program numarası değildir. `Stan` alanı ayrıştırılır, ancak bu akışta K ile karşılaştırılarak ayrıca doğrulanmaz. Klavyeden girişin başlangıcı ayrı `BarcodeStartChar` ayarıyla yönetilir.
+`Barcode ID` barkod tanımının numarasıdır; etiketin program numarası değildir. Okuyucunun başlangıç karakteri ayrıca makine ayarlarıyla uyumlu olmalıdır.
 
 **Aynı uzunlukta birden fazla tanıma dikkat:** format seçimi barkod adına veya gönderici makineye göre yapılmaz; toplam karakter sayısına göre yapılır. Aynı uzunluktaki çakışan tanımlar beklenmeyen eşleşmeler oluşturabilir.
 
 ### X ve Y neden 6 karakter okunuyor?
 
-MWM_V3'te doğrudan okuma dönüşümü şöyledir:
+Bu örnekte ölçü çarpanı **1** seçilir ve okunan altı haneli sayı 100'e bölünür:
 
 ```text
-Ekrandaki ölçü = Okunan sayısal değer × XYFactor / 100
+Ekrandaki ölçü = Okunan sayısal değer / 100
 ```
 
-`XYFactor = 1` için TT'nin 5 haneli ölçüsü ve sonrasındaki sabit `0`, birlikte 6 karakter okunur:
+TT'nin 5 haneli ölçüsü ve sonrasındaki sabit `0`, birlikte 6 karakter okunur:
 
 ```text
 X: 28940 + 0 → 289400 × 1 / 100 = 2894,00 mm
 Y: 19940 + 0 → 199400 × 1 / 100 = 1994,00 mm
 ```
 
-Yalnızca 5 ölçü hanesi okunacaksa başlangıçlar yine **19 ve 25**, uzunluklar **5** ve `XYFactor = 10` olmalıdır. Bu, aynı sonucu veren alternatif bir kurulumdur; faktör makine genelinde kullanıldığı için mevcut ayarı kontrol ederek seçim yapın. **6 hane + faktör 1** ile **5 hane + faktör 10** kurulumlarını karıştırmayın.
+Mevcut bir makinede farklı ölçü uzunluğu veya çarpanı kullanılıyorsa tanımı servis ayarlarıyla birlikte kontrol edin. Buradaki **6 hane + çarpan 1** örneğini farklı bir kurulumla karıştırmayın.
 
 Örnek barkod için X başlangıcı 20 veya Y başlangıcı 26 seçilirse ilk ölçü hanesi atlanır. Bu değerler bu TT örneğine uygun değildir.
 
@@ -117,53 +127,49 @@ Yalnızca 5 ölçü hanesi okunacaksa başlangıçlar yine **19 ve 25**, uzunluk
 3. Profil ve conta/renk alanı birleştirilir; makinedeki profil reçetesi seçilir. Eşleşme bulunamazsa profil bulunamadı uyarısı verilir.
 4. Eritme, kaynak ve soğutma süreleri; sıcaklık, kalıp, profil eni/yüksekliği ve ilgili üretim seçenekleri **profil reçetesinden** yüklenir. Bu parametreler 31 karakterlik barkodun içinde yoktur.
 5. X/Y sayıya çevrilir ve ölçeklenir. Makinenin büyük kenarı Y'ye alma ve eksen sınırı ayarlarına göre iki ölçünün yeri değişebilir.
-6. Renk farkı ve görüntüleme çarpanı uygulanarak ölçüler PLC'ye aktarılır. Operatör üretime geçmeden önce seçilen profil ve ölçüleri kontrol eder.
+6. Makine ayarlarına göre ölçü düzeltmeleri uygulanır. Operatör üretime geçmeden önce seçilen profil ve ölçüleri kontrol eder.
 
 Barkod okutma veri seçimi ve aktarımıdır; tek başına kaynak çevriminin başladığı anlamına gelmez.
 
-### PLC'ye giden ölçü
+### Ekrandaki ölçü ve üretim ölçüsü
 
-MWM_V3, renk opsiyonu etkin ve reçetede alt veya üst renk seçiliyse ayarlı renk farkını ölçüden düşer. Ardından görüntüleme çarpanına böler:
+Makinede renk farkı, birim / görüntüleme çarpanı veya eksen yerleştirme ayarı varsa üretimde kullanılan ölçü buna göre değişebilir.
 
-```text
-PLC ölçüsü = (Ekrandaki ölçü − uygulanan renk farkı) / görüntüleme çarpanı
-```
-
-Renk farkı yok ve görüntüleme çarpanı 1 ise 2894,00 / 1994,00 mm aynen aktarılır; eksen sıralaması ayarları ayrıca geçerlidir. **Kesim boyu, barkoddan çözülen çerçeve boyu ve PLC'ye aktarılan boy her kurulumda aynı kabul edilmemelidir.** TT sayfasındaki kaynak toleransı açıklaması da üretici tarafındaki ölçü hazırlığıyla ilgilidir; barkod okuyucu aşamasında koşulsuz ikinci bir kaynak payı düşüldüğü varsayılmamalıdır.
+**Kesilen tek parçanın boyunu, çerçeve ölçüsünü ve üretim ölçüsünü birbirine karıştırmayın.** Etiket hazırlığında kullanılan kaynak payını ve makinenin ölçü ayarlarını birlikte değerlendirin; aynı payı iki kez uygulamayın.
 
 ### İş listesiyle çalışma — otomatik ekran
 
 Otomatik ekranda barkodun görevi farklıdır: **yüklü iş listesindeki satırı bulmak**.
 
-| BatchFileMode | Eşleştirme |
+| Çalışma biçimi | Eşleştirme |
 |---|---|
-| 0 Standart, 2 FabPlus, 3 Sturtz, 5 Superseal | Toplam uzunluğa uyan tanımın **Prof** alanı alınır ve listedeki `ListNo` değeri aranır. |
-| 1 Doğrudan liste numarası, 4 Rotox | Gelen barkod metninin **tamamı** `ListNo` ile eşleştirilir. |
+| Barkodun belirli bir alanıyla satır seçimi | Barkod tanımında seçilen bölüm, iş listesindeki liste numarasıyla eşleştirilir. |
+| Doğrudan liste numarasıyla satır seçimi | Okutulan metnin tamamı, iş listesindeki liste numarasıyla eşleştirilir. |
 
-Satır bulunursa o satır seçilir; üretim verisi iş listesinden gelir. Doğrudan okumada profil kodunu gösteren **Prof** alanı, bu modda **liste eşleştirme anahtarı** olarak kullanılır. Bu nedenle aynı barkod tanımının her iki çalışma biçiminde uygun olduğu varsayılmamalıdır. `N001` iş dosyası satırının liste numarası `001` ise doğrudan liste numarası modunda beklenen tarama metni `001` olur; başındaki N otomatik olarak ayıklanmaz. Sayısal barkod için K başlangıç şartı da kurulumda uygun şekilde ayarlanmalıdır.
+Satır bulunursa o satır seçilir; üretim verisi iş listesinden gelir. Bu nedenle doğrudan veri okuma ile iş listesiyle çalışma için aynı barkod ayarının uygun olduğu varsayılmamalıdır. İş dosyasında `N001` ile gösterilen satırın liste numarası `001` ise doğrudan liste numarasıyla seçimde beklenen metin `001` olur. Okuyucunun başlangıç ayarı da sayısal barkodla uyumlu olmalıdır.
 
 İş dosyası formatı ve KD658 örnekleri: [Türkçe iş dosyası rehberi](turkish.md).
 
 ### Special alanı
 
-Bu alan standart TT örneğinde yoktur. Tanımlandığında çoğu modelde üçlü kaynak konumu olarak ölçeklenebilir; FAC850'de kayıt (mullion) sayısı anlamında kullanılır. Ayrıca metin olarak ve sayıya dönüşebiliyorsa sayısal değer olarak PLC'ye aktarılmaya çalışılır. FAC850 / SAC840 için ayrıca barkod okundu bilgisi yazılır. **Özel alanın anlamı modelin PLC uygulamasına bağlıdır.**
+Bu alan standart TT örneğinde yoktur. Makine modeline göre üçlü kaynak konumu veya kayıt (mullion) sayısı gibi ek bilgiler için kullanılabilir. Servis tarafından tanımlanmış bir ihtiyaç yoksa bu örnekteki gibi **0 / 0** bırakın.
 
 ## 5. MSC_V2X'ten gelen barkod
 
-MWM okuyucusu TT veya MSC cihaz adını algılamaz; **kendisine gelen karakterleri** işler. MSC_V2X'te etiket, kullanılan FastReport `Part.frx` şablonuyla veya dışarıdan gelen EPL yazdırma dosyasıyla oluşturulabilir. Bu nedenle bütün MSC makinelerinin aynı barkodu bastığı varsayılamaz.
+MSC_V2X arayüzlü kesim merkezlerinin etiket düzeni, makine ve etiket şablonuna göre değişebilir. Uyumluluk için etiketin görünüşünden önce **okuyucudan gelen tam barkod metni** kontrol edilmelidir.
 
 | MSC etiketinin içeriği | MWM'de yapılacak tanım |
 |---|---|
 | Yukarıdakiyle aynı 31 karakterlik düzen | Aynı alan konumları; profil reçetesi ve ölçü faktörü doğrulanır. |
 | Profil, renk veya ölçüleri farklı konumda taşıyan metin | Gerçek örneğe göre yeni başlangıç / uzunluk tanımı oluşturulur. |
-| Yalnız parça / pozisyon / sipariş kimliği | Tek başına profil ve ölçü vermez. Uygun iş listesindeki `ListNo` ile eşleştirilmesi gerekir. |
+| Yalnız parça / pozisyon / sipariş kimliği | Tek başına profil ve ölçü vermez. Uygun iş listesindeki liste numarasıyla eşleştirilmesi gerekir. |
 
-Bir MSC etiketini devreye alırken okunabilen baskıya değil, okuyucudan gelen **tam barkod metnine** bakın. Bu sayfada belirli bir MSC makinesinin canlı çıktısı doğrulanmış değildir; aynı düzen için uyumluluk koşulları açıklanmıştır.
+Yukarıdaki TT örneğine uygunluk, her MSC etiketi için otomatik olarak geçerli değildir. Devreye almada gerçek etiketle profil, conta/renk ve ölçü eşleşmesini kontrol edin.
 
 ## 6. İlk kurulumda kontrol
 
 1. Bir etiketi okutup tam metni ve karakter sayısını görün; boşlukları, baştaki sıfırları koruyun. Okuyucunun fazladan önek veya kod türü kimliği göndermediğini, CR ile bitirdiğini doğrulayın.
-2. Manuel / otomatik çalışma biçimini ve `BatchFileMode` ayarını belirleyin.
+2. Manuel doğrudan okuma veya otomatik iş listesiyle çalışma biçimini belirleyin.
 3. Manuel doğrudan okumada profil + conta/renk anahtarının makinede mevcut olduğunu kontrol edin.
 4. Yukarıdaki örneği tanım ekranında alanlara ayırın. X = `289400`, Y = `199400`, Color = `01` görülmelidir.
 5. Faktör 1 ile ekranda 2894,00 ve 1994,00 mm beklenir. Eksen yer değiştirme, renk farkı ve görüntüleme çarpanı varsa sonucu bu ayarlarla birlikte değerlendirin.
@@ -172,14 +178,14 @@ Bir MSC etiketini devreye alırken okunabilen baskıya değil, okuyucudan gelen 
 | Belirti | Önce kontrol edin |
 |---|---|
 | Okutunca işlem olmuyor | Aktif ekran, K başlangıcı, CR bitişi, toplam uzunluk ve barkod tanımı. Uzunluk eşleşmemesi her zaman uyarı üretmez. |
-| Profil bulunamadı | 12 karakter profil alanı, boşluklar, 2 karakter conta/renk ve birleşik `ProfID` kaydı. |
-| Ölçü 10 kat büyük / küçük | Ölçü alanının 5 / 6 hane seçimi ve `XYFactor`. |
+| Profil bulunamadı | 12 karakter profil alanı, boşluklar, 2 karakter conta/renk ve makinedeki profil tanımı. |
+| Ölçü 10 kat büyük / küçük | Ölçü alanının karakter sayısı ve ölçü çarpanı. |
 | X/Y beklenmedik | Başlangıçlar 19 / 25 mi; büyük kenar / eksen sınırı ayarları etkin mi? |
-| PLC ölçüsü ekrandan farklı | Renk farkı ve görüntüleme çarpanı. |
-| Parça bulunamadı | Yüklü iş listesi, `ListNo`, `BatchFileMode` ve eşleştirmede kullanılan metin. |
+| Üretim ölçüsü ekrandan farklı | Renk farkı ve görüntüleme çarpanı. |
+| Parça bulunamadı | Yüklü iş listesi, liste numarası, çalışma biçimi ve okutulan metin. |
 
-## Teknik dayanak ve kapsam
+## İlgili bilgi
 
-Bu rehber 20 Ekim 2026 tarihinde MWM_V3 `v26.1` kaynak sürümü (`e04f15a`) üzerinden kontrol edildi: `FrmState` giriş toplama, `UCManual.SearchBarcodeAllData` doğrudan ayrıştırma, `SearchProfData` reçete yükleme, `ControlXY` / `WriteXY` ölçü aktarımı, `UCAutomatic.SearchBarcode` liste eşleştirme ve `FrmBarcodeInit.SetBarcodeVal` alan seçimi. MSC_V2X `v27.1` (`61805f7e`) içindeki etiket / EPL yazdırma yolları da incelendi.
+[TT etiket referansı](https://hm-info.github.io/tt-barcode/Turkish) · [KD658 iş dosyası rehberi](turkish.md)
 
-Bu bir yazılım davranışı açıklamasıdır; her makinenin canlı ayarlarının veya mekanik çevriminin test edildiği anlamına gelmez. [TT etiket referansı](https://hm-info.github.io/tt-barcode/Turkish) üretici formatını, bu sayfa ise MWM tarafındaki kullanımını açıklar.
+Bu rehber verilen örnek etiket içindir. Makineye özel ölçü ve reçete ayarlarını devreye alma sırasında doğrulayın.

@@ -1,12 +1,12 @@
 # MWM HMI Arayüzü — KD658 Barkod Okuyucu ve İş Dosyası
 
-TT / MSC etiketinden doğrudan veri okuma için yeni [MWM barkod bilgi sayfasına](barcode-tr.md) bakın. Aşağıdaki ölçü konumları 31 karakterlik TT örneği ve `XYFactor = 1` için düzeltilmiştir; ekran görseli eski kurulum örneğidir.
+TT / MSC etiketinden doğrudan veri okuma için [MWM barkod bilgi sayfasına](barcode-tr.md) bakın. Aşağıdaki ölçü konumları 31 karakterlik TT örneği ve ölçü çarpanı 1 içindir; ekran görseli farklı bir kurulum örneğidir.
 
 KD658 barkod okuyucu, MWM HMI üzerinde iki farklı çalışma modunda kullanılır: **iş dosyası ile** ve **iş dosyasız**.
 
 ## İş dosyası ile çalışırken
 
-Otomatik ekranda **doğrudan liste numarası modu (`BatchFileMode = 1`)** seçiliyken okuyucunun gönderdiği `000`, `001` gibi tam metin iş dosyasındaki `ListNo` ile eşleştirilir. İş dosyasındaki N başlığı taranan metinden otomatik ayıklanmaz. Diğer modlardaki eşleştirme için [barkod bilgi sayfasına](barcode-tr.md#is-listesiyle-calsma-otomatik-ekran) bakın.
+Otomatik ekranda **doğrudan liste numarasıyla seçim** yapılırken okuyucunun gönderdiği `000`, `001` gibi tam metin iş dosyasındaki liste numarasıyla eşleştirilir. İş dosyasındaki N başlığı taranan metinden otomatik ayıklanmaz. Diğer çalışma biçimleri için [barkod bilgi sayfasına](barcode-tr.md#is-listesiyle-calsma-otomatik-ekran) bakın.
 
 ![İş dosyası örneği](./images/batch-work-file.png)
 

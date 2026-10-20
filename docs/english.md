@@ -1,12 +1,12 @@
 # MWM HMI Interface — KD658 Barcode Reader and Work File
 
-See the [MWM barcode information page (Turkish)](barcode-tr.md) for TT / MSC input, recipe lookup and operating modes. The indices below have been corrected for the 31-character TT example with `XYFactor = 1`; the screenshot shows an older installation example.
+See the [MWM barcode information page](barcode-en.md) for TT / MSC input, recipe selection and operating methods. The indices below apply to the 31-character TT example with dimension factor 1; the screenshot shows a different installation example.
 
 The KD658 barcode reader is used on the MWM HMI in two operating modes: **with a work file** and **without a work file**.
 
 ## Working with a work file
 
-On the automatic screen in **direct list ID mode (`BatchFileMode = 1`)**, the entire scanned text (for example `001`) is matched against the loaded work file's `ListNo`. The N header in a work file is not automatically removed from a scan. Other modes may extract the matching key using the configured Prof field.
+On the automatic screen, **direct list-number selection** matches the entire scanned text (for example `001`) to the loaded work file's list number. The N header in a work file is not automatically removed from a scan. Other operating methods may use a configured section of the barcode.
 
 ![Work file example](./images/batch-work-file.png)
 
@@ -87,6 +87,6 @@ Index values are **0-based** (the first character of the barcode is index 0). Th
 | X | 19 | 6 |
 | Y | 25 | 6 |
 
-This includes the fixed zero after each TT dimension: `289400 / 100 = 2894.00 mm` with `XYFactor = 1`. Color contains both gasket and color digits. In MWM_V3, direct parsing belongs to the manual screen; automatic mode matches `ListNo` using either the configured Prof slice or the entire scan, depending on `BatchFileMode`. Mode 1 expects the list number itself (for example `001`); it does not remove an N prefix automatically.
+This includes the fixed zero after each TT dimension: `289400 / 100 = 2894.00 mm` with dimension factor 1. Color contains both gasket and colour digits. Direct data input uses the manual screen; automatic operation selects a job-list row using the configured section or the entire scan. Direct list-number selection expects the list number itself (for example `001`); it does not remove an N prefix automatically.
 
 In work-file-less mode, the scanned 31-character barcode is parsed into Stan, Prof, Color, X, and Y fields according to the indices and lengths above. If Special first / Special end are defined, an additional custom field is read using the same logic.
